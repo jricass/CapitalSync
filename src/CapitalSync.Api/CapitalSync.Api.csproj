@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3"/>
+    <PackageReference Include="Scalar.AspNetCore" Version="2.12.47"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapitalSync.Application\CapitalSync.Application.csproj"/>
+    <ProjectReference Include="..\CapitalSync.Exception\CapitalSync.Exception.csproj"/>
+    <ProjectReference Include="..\CapitalSync.Infrastructure\CapitalSync.Infrastructure.csproj"/>
+  </ItemGroup>
+</Project>

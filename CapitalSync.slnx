@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CapitalSync.Api/CapitalSync.Api.csproj" />
+    <Project Path="src/CapitalSync.Application/CapitalSync.Application.csproj" />
+    <Project Path="src/CapitalSync.Domain/CapitalSync.Domain.csproj" />
+    <Project Path="src/CapitalSync.Exception/CapitalSync.Exception.csproj" />
+    <Project Path="src/CapitalSync.Infrastructure/CapitalSync.Infrastructure.csproj" />
+  </Folder>
+</Solution>
