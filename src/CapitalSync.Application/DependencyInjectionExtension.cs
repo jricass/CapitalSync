@@ -1,4 +1,6 @@
 using CapitalSync.Application.AutoMapper;
+using CapitalSync.Application.UseCases.Login.DoLogin;
+using CapitalSync.Application.UseCases.Users.GetProfile;
 using CapitalSync.Application.UseCases.Users.Register;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,6 +21,8 @@ public static class DependencyInjectionExtension
 
     private static void AddUseCases(IServiceCollection services)
     {
+        services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
+        services.AddScoped<IGetUserProfileUseCase, GetUserProfileUseCase>();
     }
 }

@@ -1,5 +1,6 @@
 using AutoMapper;
 using CapitalSync.Application.DTOs.Users.Requests;
+using CapitalSync.Application.DTOs.Users.Responses;
 using CapitalSync.Domain.Entities;
 
 namespace CapitalSync.Application.AutoMapper;
@@ -9,6 +10,7 @@ public class AutoMapping : Profile
     public AutoMapping()
     {
         RequestToEntity();
+        EntityToResponse();
     }
 
     private void RequestToEntity()
@@ -20,6 +22,6 @@ public class AutoMapping : Profile
 
     private void EntityToResponse()
     {
-
+        CreateMap<User, ResponseUserProfileJson>();
     }
 }

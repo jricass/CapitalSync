@@ -5,5 +5,5 @@ namespace CapitalSync.Application.UseCases.Users.Register;
 
 public interface IRegisterUserUseCase
 {
-    Task<ResponseUserJson> Execute(RequestRegisterUserJson request);
+    Task<ResponseRegisteredUserJson> Execute(RequestRegisterUserJson request);
 }
