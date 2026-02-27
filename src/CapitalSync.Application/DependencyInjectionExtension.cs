@@ -1,7 +1,11 @@
 using CapitalSync.Application.AutoMapper;
 using CapitalSync.Application.UseCases.Login.DoLogin;
+using CapitalSync.Application.UseCases.Users.ChangePassword;
+using CapitalSync.Application.UseCases.Users.Delete;
 using CapitalSync.Application.UseCases.Users.GetProfile;
 using CapitalSync.Application.UseCases.Users.Register;
+using CapitalSync.Application.UseCases.Users.Update;
+using CapitalSync.Domain.Repositories.Users;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CapitalSync.Application;
@@ -24,5 +28,8 @@ public static class DependencyInjectionExtension
         services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
         services.AddScoped<IGetUserProfileUseCase, GetUserProfileUseCase>();
+        services.AddScoped<IDeleteUserUseCase, DeleteUserUseCase>();
+        services.AddScoped<IUpdateUserUseCase, UpdateUserUseCase>();
+        services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
     }
 }
