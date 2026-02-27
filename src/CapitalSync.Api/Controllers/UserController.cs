@@ -15,6 +15,8 @@ public class UserController : ControllerBase
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisteredUserJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    [EndpointSummary("User Register")]
+    [EndpointDescription("Executes the registration use case, and returns created response with the registered user details.")]
     public async Task<IActionResult> Register(
         [FromServices] IRegisterUserUseCase useCase,
         [FromBody] RequestRegisterUserJson request)
@@ -27,6 +29,8 @@ public class UserController : ControllerBase
     [HttpGet]
     [Authorize]
     [ProducesResponseType(typeof(ResponseUserProfileJson), StatusCodes.Status200OK)]
+    [EndpointSummary("Get User Profile")]
+    [EndpointDescription("Retrieves the authenticated user's profile information.")]
     public async Task<IActionResult> GetProfile([FromServices] IGetUserProfileUseCase useCase)
     {
         var response = await useCase.Execute();
