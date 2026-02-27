@@ -24,7 +24,7 @@ public class UserRepository : IUserRepository
 
     public async Task<bool> ExistActiveUserWithEmail(string email)
     {
-        return await _dbContext.Users.AnyAsync(user => user.Email.Equals(email));
+        return await _dbContext.Users.AnyAsync(user => user.Email.Equals(email) && user.IsActive);
     }
 
     public async Task<User> GetById(Guid id)
@@ -34,7 +34,7 @@ public class UserRepository : IUserRepository
 
     public async Task<User?> GetUserByEmail(string email)
     {
-        return await _dbContext.Users.AsNoTracking().FirstOrDefaultAsync(user => user.Email.Equals(email));
+        return await _dbContext.Users.AsNoTracking().FirstOrDefaultAsync(user => user.Email.Equals(email) && user.IsActive);
     }
 
     public void Update(User user)
