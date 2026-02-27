@@ -3,6 +3,8 @@ using System.Security.Claims;
 using CapitalSync.Domain.Entities;
 using CapitalSync.Domain.Security.Tokens;
 using CapitalSync.Domain.Services.LoggedUser;
+using CapitalSync.Exception;
+using CapitalSync.Exception.ExceptionsBase;
 using CapitalSync.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,9 +31,16 @@ public class LoggedUser : ILoggedUser
 
         var identifier = jwtSecurityToken.Claims.First(claim => claim.Type == ClaimTypes.Sid).Value;
 
-        return await _dbContext
+        var user = await _dbContext
             .Users
             .AsNoTracking()
-            .FirstAsync(user => user.Id == Guid.Parse(identifier));
+            .FirstOrDefaultAsync(user => user.Id == Guid.Parse(identifier));
+        
+        if (user is null || !user.IsActive)
+        {
+            throw new UserInactiveException();
+        }
+
+        return user;
     }
 }

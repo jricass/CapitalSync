@@ -149,6 +149,15 @@ namespace CapitalSync.Exception {
             get { 
                 return ResourceManager.GetString("INVALID_PASSWORD", resourceCulture);
             }
-        } 
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sua conta foi desativada. Entre em contato com o suporte.
+        /// </summary>
+        public static string USER_INACTIVE {
+            get {
+                return ResourceManager.GetString("USER_INACTIVE", resourceCulture);
+            }
+        }
     }
 }

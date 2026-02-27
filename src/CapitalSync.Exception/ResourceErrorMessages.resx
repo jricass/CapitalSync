@@ -161,4 +161,8 @@
     <value>Your password must have at least 8 characters, with at least one upper case letter, one lower case letter, a number and a special character like (@, !, *, ?, .).</value>
     <comment/>
   </data>
+  <data name="USER_INACTIVE" xml:space="preserve">
+    <value>Sua conta foi desativada. Entre em contato com o suporte.</value>
+    <comment/>
+  </data>
 </root>
